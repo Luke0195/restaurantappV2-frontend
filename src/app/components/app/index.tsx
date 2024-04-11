@@ -1,3 +1,8 @@
+import { SignIn } from '@/pages/Signin'
 export function Main() {
-  return <h1> Main App 2</h1>
+  return (
+    <div className="w-screen h-screen ">
+      <SignIn />
+    </div>
+  )
 }
