@@ -1,6 +1,6 @@
 import { IoMdLogIn } from 'react-icons/io'
 import { toast } from 'react-toastify'
-import { FieldError } from '@/app/components/Form'
+import { FieldError } from '@/widgets/Form'
 import { useForm, Controller } from 'react-hook-form'
 import {
   AuthenticationParams,
@@ -10,9 +10,11 @@ import {
 } from '../../../'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Input, Button, Loader } from 'semantic-ui-react'
-import { useMutation } from 'react-query'
-
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 export function Form() {
+  const navigate = useNavigate()
+  const [loading, setLoading] = useState<boolean>(false)
   const { formState, handleSubmit, control } = useForm<AuthenticationParams>({
     defaultValues: makeDefaultValues(),
     mode: 'all',
@@ -21,18 +23,18 @@ export function Form() {
   })
   const { isValid, errors } = formState
 
-  const { mutate, isLoading } = useMutation(signInService.auth, {
-    onSuccess: (data) => {
-      console.log(data)
-      toast.success('Usuario Autenticado com sucesso!')
-    },
-    onError: () => {
+  const onSubmit = async ({ email, password }: AuthenticationParams) => {
+    setLoading(true)
+    try {
+      const { token } = await signInService.auth({ email, password })
+      localStorage.setItem('waiterapp@token', JSON.stringify(token))
+      navigate('/home')
+      toast.success('Usuário Autenticado com sucesso!')
+    } catch (error) {
       toast.error('Erro ao realizar a autenticação')
-    },
-  })
-
-  const onSubmit = async (data: AuthenticationParams) => {
-    mutate(data)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -63,6 +65,7 @@ export function Form() {
               icon="lock"
               type="password"
               {...field}
+              autoComplete="true"
               placeholder="Informe a sua senha"
               iconPosition="left"
               className="w-full my-2"
@@ -82,8 +85,8 @@ export function Form() {
             className="w-full relative h-11"
             type="submit"
             color={!isValid ? 'grey' : 'red'}
-            disabled={!isValid || isLoading}>
-            {!isValid || isLoading ? <Loader active size="small" /> : 'Entrar'}
+            disabled={!isValid || loading}>
+            {!isValid || loading ? <Loader active size="small" /> : 'Entrar'}
           </Button>
         </div>
       </form>
