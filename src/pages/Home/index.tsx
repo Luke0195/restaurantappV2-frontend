@@ -1,3 +1,4 @@
+import { SideBar } from '@/widgets'
 export function Home() {
-  return <h1> Home Component</h1>
+  return <SideBar />
 }
