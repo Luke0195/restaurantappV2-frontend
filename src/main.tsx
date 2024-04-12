@@ -1,18 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Main } from '@/app/components/app'
+import { Main } from '@/app/components/App'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ToastContainer } from 'react-toastify'
 import '@/app/assets/styles/main.css'
-import '@radix-ui/themes/styles.css'
-import { Theme } from '@radix-ui/themes'
+import 'semantic-ui-css/semantic.min.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <Theme>
-        <Main />
-      </Theme>
+      <Main />
     </QueryClientProvider>
+    <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+    />
+
+    <ToastContainer />
   </React.StrictMode>,
 )

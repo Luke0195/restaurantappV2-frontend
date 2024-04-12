@@ -7,6 +7,7 @@ export default {
         sans: ['Poppins', 'sans-serif'],
       },
       colors: {
+        fieldError: '#9f3a38',
         primaryRed: '#d73035',
         primaryDarkRed: '#8a1114',
         primaryLightRed: '#ffabad',

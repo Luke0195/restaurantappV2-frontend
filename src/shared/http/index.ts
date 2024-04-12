@@ -1,5 +1,6 @@
 import { HttpResponseData, HttpClient, HttpRequestData } from './interfaces'
 import { getHeaders } from './factories'
+import { InvalidResponseData } from './exceptions/invalid-response'
 
 class HttpFetchClient implements HttpClient {
   private readonly baseUrl
@@ -18,9 +19,10 @@ class HttpFetchClient implements HttpClient {
       body: body,
       method: method || 'GET',
       headers: getHeaders(headers),
-    })
-    return response.json()
+    }).then((response) => response.json())
+    return response
   }
 }
+const httpClient = new HttpFetchClient()
 
-export default new HttpFetchClient()
+export { httpClient, getHeaders, InvalidResponseData }
