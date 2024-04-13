@@ -1,18 +1,18 @@
-import {
-  makeDefaultValues,
-  signInService,
-  schema,
-  AuthenticationParams,
-} from '../../../'
 import { FieldError } from '@/widgets/Form'
 import { IoMdLogIn } from 'react-icons/io'
 import { Controller } from 'react-hook-form'
-import { Input, Button } from 'semantic-ui-react'
+import { Button, Input } from 'semantic-ui-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@/libs/yup'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import {
+  AuthenticationParams,
+  makeDefaultValues,
+  schema,
+  signInService,
+} from '../../../'
 
 export function Form() {
   const navigate = useNavigate()

@@ -14,7 +14,7 @@ export function Ui() {
     <div className="w-screen h-screen flex-col items-center justify-center overflow-hidden relative">
       {showBanner && <Banner />}
       <div className="flex  items-center justify-center h-full ">
-        <div className="flex-1 relative max-md:hidden   max-sm:hidden">
+        <div className="flex-1 relative md:hidden   max-sm:hidden">
           {!showBanner && (
             <>
               <img
