@@ -1,4 +1,4 @@
-import { httpClient, InvalidResponseData } from '@/shared/http'
+import { httpClient } from '@/shared/http'
 import { AuthService } from './interfaces'
 import { Account } from '@/entities/account'
 
@@ -12,9 +12,7 @@ class SignInService implements AuthService {
       body: { email, password },
       headers: null,
     })
-    if (typeof response !== 'object')
-      throw new InvalidResponseData('Invalid Response')
-    return { token: response.token }
+    return response
   }
 }
 

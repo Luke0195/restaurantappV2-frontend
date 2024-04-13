@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Banner, Form } from './components'
 import logo from '@/assets/img/logo.jpg'
+
 export function Ui() {
   const [showBanner, setShowBanner] = useState(true)
 
@@ -16,12 +17,10 @@ export function Ui() {
         <div className="flex-1 relative ">
           {!showBanner && (
             <>
-              <img src={logo} className="object-fill relative opacity-80" />
-              <p className="text-primaryWhiteLight absolute  top-1/2 left-80 transform -translate-x-auto -translate-y-auto opacity-85">
-                {' '}
-                Gerencie e optimize os recursos do seu restaurante com{' '}
-                <span className="font-bold">LSDFood</span>
-              </p>
+              <img
+                src={logo}
+                className="object-fill relative opacity-80 h-screen w-screen"
+              />
             </>
           )}
         </div>
