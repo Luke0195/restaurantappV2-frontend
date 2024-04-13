@@ -1,3 +1,4 @@
+import { expect, describe, test } from 'vitest'
 import validator from './index'
 
 describe('Validator', () => {
