@@ -13,18 +13,18 @@ export function Ui() {
   return (
     <div className="w-screen h-screen flex-col items-center justify-center overflow-hidden relative">
       {showBanner && <Banner />}
-      <div className="flex  items-center justify-center h-full">
-        <div className="flex-1 relative ">
+      <div className="flex  items-center justify-center h-full ">
+        <div className="flex-1 relative max-md:hidden   max-sm:hidden">
           {!showBanner && (
             <>
               <img
                 src={logo}
-                className="object-fill relative opacity-80 h-screen w-screen"
+                className="object-fill relative opacity-80 h-screen w-screen  "
               />
             </>
           )}
         </div>
-        <div className="flex-1 w-full flex flex-col items-center justify-center">
+        <div className="flex-1 w-full flex flex-col items-center justify-center ">
           <p className="font-normal"> Bem-vindo(a) ao </p>
           <span className="flex items-center text-2xl my-2 ">
             <h2 className="font-bold"> LSDFood</h2>App

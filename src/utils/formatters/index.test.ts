@@ -7,4 +7,10 @@ describe('Formatters', () => {
     const result = formatters.notEmptyStringOrDefault(expectedValue)
     expect(result).toEqual('any_value')
   })
+
+  test('ensure notEmptyStringOrDefault return default value when invalid data is provided', () => {
+    const invalidValue = 0
+    const result = formatters.notEmptyStringOrDefault(invalidValue)
+    expect(result).toBe('-')
+  })
 })
