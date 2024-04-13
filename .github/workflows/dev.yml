@@ -30,4 +30,9 @@ jobs:
          ${{ runner.os }}-build-${{ env.cache-name}}-${{ runner.os }}-build-${{ runner.os }}
     - name: Run unit Tests
       run: npm run test
+    - name: Cypress run
+      uses: cypress-io/github-action@v6
+      with:
+        component: true
+
     
