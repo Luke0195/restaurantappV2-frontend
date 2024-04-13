@@ -1,48 +1,17 @@
+import { useAuthenticationHook } from './usecases'
+import validators from '@/utils/validators'
 import { FieldError } from '@/widgets/Form'
 import { IoMdLogIn } from 'react-icons/io'
 import { Controller } from 'react-hook-form'
 import { Button, Input } from 'semantic-ui-react'
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@/libs/yup'
-import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
-import {
-  AuthenticationParams,
-  makeDefaultValues,
-  schema,
-  signInService,
-} from '../../../'
 
 export function Form() {
-  const navigate = useNavigate()
-  const [loading, setLoading] = useState<boolean>(false)
+  const { form, loading, onSubmit } = useAuthenticationHook()
   const {
     handleSubmit,
     control,
-    formState: { isValid, errors },
-  } = useForm<AuthenticationParams>({
-    defaultValues: makeDefaultValues(),
-    mode: 'all',
-    reValidateMode: 'onBlur',
-    resolver: yupResolver(schema),
-  })
-
-  const onSubmit = async ({ email, password }: AuthenticationParams) => {
-    setLoading(true)
-    try {
-      const { token } = await signInService.auth({ email, password })
-      if (token) {
-        localStorage.setItem('waiterapp@token', JSON.stringify(token))
-        toast.success('Usuário Autenticado com sucesso!')
-        navigate('home')
-      }
-    } catch (error: any) {
-      toast.error('Erro ao realizar autenticação')
-    } finally {
-      setLoading(false)
-    }
-  }
+    formState: { errors, isValid },
+  } = form
 
   return (
     <div className="w-3/6 flex flex-col items-center justify-center overflow-hidden  ">
@@ -61,8 +30,8 @@ export function Form() {
             />
           )}
         />
-        {errors.email && errors.email.message && (
-          <FieldError fieldMessage={errors.email.message} />
+        {validators.isBoolean(errors.email && errors.email.message) && (
+          <FieldError fieldMessage={errors?.email?.message} />
         )}
         <Controller
           name="password"
@@ -80,8 +49,8 @@ export function Form() {
             />
           )}
         />
-        {errors.password && errors.password.message && (
-          <FieldError fieldMessage={errors.password.message} />
+        {validators.isBoolean(errors.password && errors.password.message) && (
+          <FieldError fieldMessage={errors?.password?.message} />
         )}
         <span className="text-xs w-full flex items-center justify-center text-primaryGray cursor-pointer gap-2 align-items-center  hover:text-primaryRed ">
           <IoMdLogIn size={19} />
