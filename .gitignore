@@ -24,6 +24,5 @@ coverage
 *.sln
 *.sw?
 cypress/downloads
-cypress/fixtures
-cypress/support
+
 cypress/screenshots
