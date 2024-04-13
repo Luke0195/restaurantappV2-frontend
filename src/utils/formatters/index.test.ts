@@ -1,5 +1,5 @@
 import formatters from '.'
-import { describe, test, expect } from 'vitest'
+import { describe, expect, test } from 'vitest'
 
 describe('Formatters', () => {
   test('ensure notEmptyStringOrDefault return a string when valid param is provided', () => {

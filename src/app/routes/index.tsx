@@ -1,6 +1,6 @@
-import { Routes as Switch, Route } from 'react-router-dom'
+import { Route, Routes as Switch } from 'react-router-dom'
 import { PrivateRoute } from './private-route'
-import { SignIn, Home } from '@/pages'
+import { Home, SignIn } from '@/pages'
 
 export function Routes() {
   return (

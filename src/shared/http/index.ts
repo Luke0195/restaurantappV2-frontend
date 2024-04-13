@@ -1,4 +1,4 @@
-import { HttpResponseData, HttpClient, HttpRequestData } from './interfaces'
+import { HttpClient, HttpRequestData, HttpResponseData } from './interfaces'
 import { getHeaders } from './factories'
 import { InvalidResponseData } from './exceptions/invalid-response'
 

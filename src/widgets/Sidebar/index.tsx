@@ -1,4 +1,4 @@
-import { FiMenu, FiHome } from 'react-icons/fi'
+import { FiHome, FiMenu } from 'react-icons/fi'
 import { LuMenuSquare } from 'react-icons/lu'
 export function SideBar() {
   return (
