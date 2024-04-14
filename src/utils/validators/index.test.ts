@@ -1,6 +1,5 @@
 import { describe, expect, test } from 'vitest'
 import validator from './index'
-import exp from 'constants'
 
 describe('Validator', () => {
   test('ensure isString return false if invalid value is provided', () => {
