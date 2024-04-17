@@ -1,4 +1,10 @@
-import { SideBar } from '@/widgets'
+import { Outlet } from 'react-router-dom'
+import { Ui } from '@/features/home'
+
 export function Home() {
-  return <SideBar />
+  return (
+    <div>
+      <Ui />
+    </div>
+  )
 }

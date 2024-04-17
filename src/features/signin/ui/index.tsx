@@ -10,6 +10,7 @@ export function Ui() {
       setShowBanner(false)
     }, 2000)
   }, [])
+
   return (
     <div className="w-screen h-screen flex-col items-center justify-center overflow-hidden relative">
       {showBanner && <Banner />}

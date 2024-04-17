@@ -1,19 +1,21 @@
 import { Route, Routes as Switch } from 'react-router-dom'
 import { PrivateRoute } from './private-route'
 import { Home, SignIn } from '@/pages'
+import { Layout } from '@/widgets/Layout'
 
 export function Routes() {
   return (
     <Switch>
       <Route index element={<SignIn />} />
       <Route
-        path="home"
+        path="main"
         element={
           <PrivateRoute>
-            <Home />
+            <Layout />
           </PrivateRoute>
-        }
-      />
+        }>
+        <Route index element={<Home />} />
+      </Route>
     </Switch>
   )
 }

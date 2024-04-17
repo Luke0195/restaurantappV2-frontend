@@ -33,7 +33,7 @@ export function useAuthenticationHook(): SignInAuthenticationHookProps {
       if (token) {
         localStorage.setItem('waiterapp@token', JSON.stringify(token))
         toast.success('Usuário Autenticado com sucesso!')
-        navigate('home')
+        navigate('/main')
       }
     } catch (error: any) {
       toast.error('Erro ao realizar autenticação')
