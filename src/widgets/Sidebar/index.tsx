@@ -1,4 +1,4 @@
-import waiterLogo from '../../assets/img/walogo.svg'
+import waiterLogo from '@/assets/img/walogo.svg'
 import { sideBarProps } from './options'
 import { Icon } from './components'
 import { CiPower } from 'react-icons/ci'
@@ -12,6 +12,7 @@ export function SideBar() {
     localStorage.removeItem('waiterapp@token')
     navigate('/')
   }
+
   return (
     <div
       className={`w-32 h-screen  p-4 flex flex-col items-center bg-primaryWhite border-x-gray-300 border`}>
