@@ -1,6 +1,6 @@
 import { Route, Routes as Switch } from 'react-router-dom'
 import { PrivateRoute } from './private-route'
-import { Home, SignIn } from '@/pages'
+import { Historic, Home, SignIn } from '@/pages'
 import { Layout } from '@/widgets/Layout'
 
 export function Routes() {
@@ -15,6 +15,7 @@ export function Routes() {
           </PrivateRoute>
         }>
         <Route index element={<Home />} />
+        <Route path="historic" element={<Historic />} />
       </Route>
     </Switch>
   )

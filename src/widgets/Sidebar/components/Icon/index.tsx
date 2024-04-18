@@ -6,10 +6,14 @@ type ComponentProps = {
 
 export const Icon = (props: ComponentProps) => {
   const { icon: Component, text } = props.data
+
   return (
     <li className="flex flex-col items-center w-full my-7 py-3 gap-4 cursor-pointer hover:text-primaryRed">
-      <Component size={23} color="" />
-      <span className="text-sm"> {text}</span>
+      <button
+        className={`border-none flex flex-col items-center gap-y-1  hover:text-primaryRed active:text-primaryRed`}>
+        <Component size={23} />
+        <span>{text}</span>
+      </button>
     </li>
   )
 }

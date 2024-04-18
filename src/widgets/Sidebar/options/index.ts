@@ -9,19 +9,19 @@ import { CgProfile } from 'react-icons/cg'
 export type IconProps = {
   icon: IconType
   text: string
-  link?: string
+  link: string
 }
 
 export const sideBarProps: IconProps[] = [
   {
     icon: FaHome,
     text: 'Home',
-    link: '/',
+    link: '/main',
   },
   {
     icon: PiClipboardTextBold,
     text: 'Histórico',
-    link: '/historic',
+    link: 'historic',
   },
   {
     icon: FiUsers,
@@ -31,6 +31,7 @@ export const sideBarProps: IconProps[] = [
   {
     icon: MdOutlineNotificationsNone,
     text: 'Notificações',
+    link: '/notifications',
   },
   {
     icon: PiGearSixLight,
