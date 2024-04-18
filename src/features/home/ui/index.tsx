@@ -1,5 +1,6 @@
 import { FaHome } from 'react-icons/fa'
 import { Header } from '@/widgets/Header'
+import { DragnDrop } from './components'
 
 export function Ui() {
   return (
@@ -11,6 +12,7 @@ export function Ui() {
           title: 'Home',
         }}
       />
+      <DragnDrop />
     </>
   )
 }
