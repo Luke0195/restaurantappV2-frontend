@@ -9,7 +9,6 @@ type DragItemProps = {
 }
 export function DragItem(props: DragItemProps) {
   const {
-    type,
     data: { icon: Component, text },
   } = props
   return (
