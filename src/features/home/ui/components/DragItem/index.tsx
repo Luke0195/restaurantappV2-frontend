@@ -13,14 +13,12 @@ export function DragItem(props: DragItemProps) {
     data: { icon: Component, text },
   } = props
   return (
-    <div className=" flex flex-col items-center p-4 overflow-hidden ">
+    <div className=" flex flex-col items-center p-4 overflow-auto ">
       <div className="flex items-center  h-full gap-4 ">
         <Component size={20} />
         <strong> {text}</strong>
       </div>
-      <div className="w-full gap-6 flex flex-col justify-center items-center my-3">
-        <Card />
-        <Card />
+      <div className="w-full gap-6  overflow-auto  flex flex-col justify-center items-center my-3">
         <Card />
         <Card />
       </div>
