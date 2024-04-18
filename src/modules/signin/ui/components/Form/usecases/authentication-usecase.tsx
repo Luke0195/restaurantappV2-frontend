@@ -3,7 +3,7 @@ import {
   makeDefaultValues,
   schema,
   signInService,
-} from '@/features/signin'
+} from '@/modules/signin'
 import { yupResolver } from '@/libs/yup'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'

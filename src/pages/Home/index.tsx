@@ -1,4 +1,4 @@
-import { Ui } from '@/features/home'
+import { Ui } from '@/modules/home'
 
 export function Home() {
   return (
