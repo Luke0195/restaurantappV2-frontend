@@ -3,7 +3,7 @@ import { sideBarProps } from './options'
 import { Icon } from './components'
 import { CiPower } from 'react-icons/ci'
 
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export function SideBar() {
   const navigate = useNavigate()
@@ -19,10 +19,12 @@ export function SideBar() {
       <img src={waiterLogo} alt="Logo waiter app" />
       <ul className="my-7 flex-col">
         {sideBarProps.map((item, index) => (
-          <Icon
-            key={index}
-            data={{ icon: item.icon, link: item.link, text: item.text }}
-          />
+          <Link to={item.link} className="text-gray-400">
+            <Icon
+              key={index}
+              data={{ icon: item.icon, link: item.link, text: item.text }}
+            />
+          </Link>
         ))}
         <button
           className="flex flex-col items-center w-full my-9 py-3 gap-4 cursor-pointer hover:text-primaryRed"
