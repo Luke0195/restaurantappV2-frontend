@@ -1,11 +1,14 @@
 import { httpClient } from '@/shared/http'
-import { AuthService } from './interfaces'
+import { AuthenticationUseCase } from '../usecases'
 import { Account } from '@/entities/account'
 
 import { AuthenticationParams } from '../protocols'
 
-class SignInService implements AuthService {
-  async auth({ email, password }: AuthenticationParams): Promise<Account> {
+class SignInService implements AuthenticationUseCase {
+  async authentication({
+    email,
+    password,
+  }: AuthenticationParams): Promise<Account> {
     const response: any = await httpClient.request({
       endpoint: 'auth/login',
       method: 'POST',

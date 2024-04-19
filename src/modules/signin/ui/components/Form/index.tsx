@@ -1,4 +1,4 @@
-import { useAuthenticationHook } from './usecases'
+import { useAuthenticationHook } from './hooks'
 import validators from '@/utils/validators'
 import { FieldError } from '@/widgets/Form'
 import { IoMdLogIn } from 'react-icons/io'

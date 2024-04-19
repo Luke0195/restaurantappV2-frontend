@@ -29,7 +29,7 @@ export function useAuthenticationHook(): SignInAuthenticationHookProps {
   const onSubmit = async ({ email, password }: AuthenticationParams) => {
     setLoading(true)
     try {
-      const { token } = await signInService.auth({ email, password })
+      const { token } = await signInService.authentication({ email, password })
       if (token) {
         localStorage.setItem('waiterapp@token', JSON.stringify(token))
         toast.success('Usuário Autenticado com sucesso!')
