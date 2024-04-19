@@ -1,10 +1,5 @@
 import { IconType } from 'react-icons'
-import { FaHome } from 'react-icons/fa'
-import { PiClipboardTextBold } from 'react-icons/pi'
-import { FiUsers } from 'react-icons/fi'
-import { MdOutlineNotificationsNone } from 'react-icons/md'
-import { PiGearSixLight } from 'react-icons/pi'
-import { CgProfile } from 'react-icons/cg'
+import { IconsRoot } from './icons'
 
 export type IconProps = {
   icon: IconType
@@ -14,32 +9,37 @@ export type IconProps = {
 
 export const sideBarProps: IconProps[] = [
   {
-    icon: FaHome,
+    icon: IconsRoot.FaHome,
     text: 'Home',
     link: '/main',
   },
   {
-    icon: PiClipboardTextBold,
+    icon: IconsRoot.PiClipboardTextBold,
     text: 'Histórico',
     link: 'historic',
   },
   {
-    icon: FiUsers,
+    icon: IconsRoot.BiFoodMenu,
+    text: 'Cardápio',
+    link: 'categories',
+  },
+  {
+    icon: IconsRoot.FiUsers,
     text: 'Usuários',
     link: '/users',
   },
   {
-    icon: MdOutlineNotificationsNone,
+    icon: IconsRoot.MdOutlineNotificationsNone,
     text: 'Notificações',
     link: '/notifications',
   },
   {
-    icon: PiGearSixLight,
+    icon: IconsRoot.PiGearSixLight,
     text: 'Configurações',
     link: '/settings',
   },
   {
-    icon: CgProfile,
+    icon: IconsRoot.CgProfile,
     text: 'Perfil',
     link: '/profile',
   },
