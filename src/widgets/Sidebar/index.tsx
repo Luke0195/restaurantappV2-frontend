@@ -18,10 +18,9 @@ export function SideBar() {
       className={`w-32 h-screen  p-4 flex flex-col items-center bg-primaryWhite border-x-gray-300 border`}>
       <img src={waiterLogo} alt="Logo waiter app" />
       <ul className="my-7 flex-col">
-        {sideBarProps.map((item, index) => (
-          <Link to={item.link} className="text-gray-400">
+        {sideBarProps.map((item) => (
+          <Link to={item.link} className="text-gray-400" key={item.text}>
             <Icon
-              key={index}
               data={{ icon: item.icon, link: item.link, text: item.text }}
             />
           </Link>
