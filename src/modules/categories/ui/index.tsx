@@ -1,8 +1,16 @@
+import { categoryService, header, mapPersisteToDomain } from '..'
 import { Content, Header, ManagerRoot } from '@/widgets'
 import { IconsRoot } from '@/widgets/Sidebar/options/icons'
-import { header, makeMock } from '../options'
+
 import { Button } from 'semantic-ui-react'
+import { useQuery } from 'react-query'
+
 export function Ui() {
+  const response = useQuery({
+    queryKey: 'categories',
+    queryFn: async () => await categoryService.getCategories(),
+  })
+
   return (
     <Content>
       <Header
@@ -18,7 +26,7 @@ export function Ui() {
         </div>
         <ManagerRoot.ManagerContainer>
           <ManagerRoot.ManagerHeader options={header} />
-          <ManagerRoot.ManagerBody body={makeMock()} header={header} />
+          <ManagerRoot.ManagerBody body={[]} header={header} />
         </ManagerRoot.ManagerContainer>
       </ManagerRoot.ManagerWrapper>
     </Content>

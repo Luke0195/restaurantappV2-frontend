@@ -1,14 +1,9 @@
 import { Category } from '@/entities/category'
 import { ManagerResponseData } from '../protocols'
 import formatters from '@/utils/formatters'
-import validators from '@/utils/validators'
+
 import moment from 'moment'
-import {
-  Dropdown,
-  DropdownDivider,
-  DropdownItem,
-  DropdownMenu,
-} from 'semantic-ui-react'
+import { Dropdown, DropdownItem, DropdownMenu } from 'semantic-ui-react'
 
 export function mapPersisteToDomain(data: Category[]): ManagerResponseData[] {
   return data.map((item) => {

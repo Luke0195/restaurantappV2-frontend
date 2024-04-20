@@ -2,6 +2,13 @@ import { HeaderCellProps } from '@/widgets/Manager/components/header/protocols'
 
 export const header: HeaderCellProps[] = [
   {
+    text: 'Id',
+    width: 2,
+    textAlign: 'center',
+    key: 'id',
+    sortedBy: 'id',
+  },
+  {
     text: 'Ícone',
     width: 2,
     textAlign: 'center',
@@ -10,10 +17,17 @@ export const header: HeaderCellProps[] = [
   },
   {
     text: 'Nome',
-    width: 10,
+    width: 8,
     textAlign: 'center',
     key: 'name',
     sortedBy: 'name',
+  },
+  {
+    text: 'Data de Criação',
+    width: 2,
+    textAlign: 'center',
+    key: 'createdAt',
+    sortedBy: 'createdAt',
   },
   {
     text: 'Ações',
@@ -23,10 +37,3 @@ export const header: HeaderCellProps[] = [
     sortedBy: 'action',
   },
 ]
-
-export const makeMock = (): any[] => {
-  return [
-    { icon_jsx: 'any_icon', name: 'any_name', action: <h1> Teste</h1> },
-    { icon_jsx: 'any_icon1', name: 'any_name1', action: 'any_action' },
-  ]
-}
