@@ -13,7 +13,7 @@ export function Tabs(props: TabProps) {
   )
 
   return (
-    <div className="my-20 border-b border-gray-200">
+    <div className="my-14 border-b border-gray-200">
       {tabOptions.map((item, index) => (
         <button
           className={`px-6 py-4 font-semibold rounded-t-lg  ${activeTab === index ? `text-red-600 bg-slate-200` : `text-gray-400`}`}

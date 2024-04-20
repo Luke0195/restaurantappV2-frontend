@@ -1,21 +1,7 @@
-import { Content, Header, Tabs } from '@/widgets'
+import { Content, Header, ManagerRoot } from '@/widgets'
 import { IconsRoot } from '@/widgets/Sidebar/options/icons'
-import { useState } from 'react'
-
+import { header, makeMock } from '../options'
 export function Ui() {
-  const [activeTab, setActiveTab] = useState<number>(0)
-
-  const options = [
-    {
-      title: 'Produtos',
-      component: () => <h1> Produto</h1>,
-    },
-    {
-      title: 'Categorias',
-      component: () => <h1> Categorias</h1>,
-    },
-  ]
-
   return (
     <Content>
       <Header
@@ -25,9 +11,12 @@ export function Ui() {
           icon: IconsRoot.BiFoodMenu,
         }}
       />
-
-      <Tabs tabOptions={options} tabProps={{ activeTab, setActiveTab }} />
-      {options[activeTab].component()}
+      <ManagerRoot.ManagerWrapper>
+        <ManagerRoot.ManagerContainer>
+          <ManagerRoot.ManagerHeader options={header} />
+          <ManagerRoot.ManagerBody body={makeMock()} header={header} />
+        </ManagerRoot.ManagerContainer>
+      </ManagerRoot.ManagerWrapper>
     </Content>
   )
 }
